@@ -15,7 +15,7 @@ export const load = async () => {
 };
 
 export const actions = {
-	default: async ({ request, platform }) => {
+	default: async ({ request, platform, url }) => {
 		const form = await superValidate(request, zod(FormSchema));
 
 		if (!form.valid) {
@@ -30,7 +30,7 @@ export const actions = {
 		});
 
 		return message(form, {
-			url: `https://s.podter.me/${slug}`
+			url: url.origin + '/' + slug
 		} as Message);
 	}
 };
