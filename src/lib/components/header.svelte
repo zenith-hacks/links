@@ -2,6 +2,7 @@
 	import { Link, Sun, Moon } from 'lucide-svelte';
 	import { toggleMode } from 'mode-watcher';
 	import { Button } from '$lib/components/ui/button';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import Github from '$lib/components/icons/github.svelte';
 </script>
 
@@ -12,15 +13,34 @@
 			<span class="font-medium">s.podter.me</span>
 		</a>
 		<div class="flex items-center space-x-1">
-			<Button size="icon" variant="ghost" href="https://github.com/Podter/s.podter.me">
-				<Github width={18} height={18} />
-				<span class="sr-only">GitHub</span>
-			</Button>
-			<Button size="icon" variant="ghost" on:click={toggleMode}>
-				<Sun size={18} class="dark:hidden" />
-				<Moon size={18} class="hidden dark:block" />
-				<span class="sr-only">Toggle theme</span>
-			</Button>
+			<Tooltip.Root>
+				<Tooltip.Trigger asChild let:builder>
+					<Button
+						builders={[builder]}
+						size="icon"
+						variant="ghost"
+						href="https://github.com/Podter/s.podter.me"
+					>
+						<Github width={18} height={18} />
+						<span class="sr-only">GitHub</span>
+					</Button>
+				</Tooltip.Trigger>
+				<Tooltip.Content side="bottom">
+					<p>GitHub</p>
+				</Tooltip.Content>
+			</Tooltip.Root>
+			<Tooltip.Root>
+				<Tooltip.Trigger asChild let:builder>
+					<Button builders={[builder]} size="icon" variant="ghost" on:click={toggleMode}>
+						<Sun size={18} class="dark:hidden" />
+						<Moon size={18} class="hidden dark:block" />
+						<span class="sr-only">Toggle theme</span>
+					</Button>
+				</Tooltip.Trigger>
+				<Tooltip.Content side="bottom">
+					<p>Toggle theme</p>
+				</Tooltip.Content>
+			</Tooltip.Root>
 		</div>
 	</div>
 </header>

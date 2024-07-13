@@ -1,8 +1,9 @@
 <script lang="ts">
 	import QRCode from 'qrcode';
 	import { QrCodeIcon } from 'lucide-svelte';
-	import { Button, buttonVariants } from '$lib/components/ui/button';
+	import { Button } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog';
+	import * as Tooltip from '$lib/components/ui/tooltip/index';
 
 	export let url: string;
 
@@ -11,9 +12,18 @@
 </script>
 
 <Dialog.Root>
-	<Dialog.Trigger class={buttonVariants({ size: 'icon', variant: 'secondary' })}>
-		<QrCodeIcon size={18} />
-		<span class="sr-only">Show QR code</span>
+	<Dialog.Trigger asChild let:builder={triggerBuilder}>
+		<Tooltip.Root>
+			<Tooltip.Trigger asChild let:builder={tooltipBuilder}>
+				<Button variant="secondary" size="icon" builders={[triggerBuilder, tooltipBuilder]}>
+					<QrCodeIcon size={18} />
+					<span class="sr-only">Show QR code</span>
+				</Button>
+			</Tooltip.Trigger>
+			<Tooltip.Content>
+				<p>Show QR code</p>
+			</Tooltip.Content>
+		</Tooltip.Root>
 	</Dialog.Trigger>
 	<Dialog.Content class="sm:max-w-md">
 		<Dialog.Header>
