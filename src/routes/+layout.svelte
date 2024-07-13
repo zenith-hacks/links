@@ -3,6 +3,7 @@
 	import '../app.css';
 
 	import { ModeWatcher } from 'mode-watcher';
+	import { Toaster } from '$lib/components/ui/sonner';
 	import Header from '$lib/components/header.svelte';
 	import Footer from '$lib/components/footer.svelte';
 </script>
@@ -18,4 +19,5 @@
 
 <Footer />
 
+<Toaster />
 <ModeWatcher />
