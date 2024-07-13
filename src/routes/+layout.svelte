@@ -31,7 +31,7 @@
 <slot></slot>
 
 <div
-	class="bg-dot-[#E5E5E5] dark:bg-dot-[#262626] pointer-events-none fixed bottom-0 left-0 right-0 top-0 -z-10 flex h-screen w-full"
+	class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 -z-10 flex h-screen w-full bg-dot-[#E5E5E5] dark:bg-dot-[#262626]"
 	aria-hidden="true"
 ></div>
 
