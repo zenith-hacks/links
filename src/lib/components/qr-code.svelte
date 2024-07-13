@@ -1,9 +1,10 @@
 <script lang="ts">
 	import QRCode from 'qrcode';
-	import { QrCodeIcon } from 'lucide-svelte';
+	import { QrCodeIcon, Download } from 'lucide-svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Tooltip from '$lib/components/ui/tooltip/index';
+	import UrlDisplay from './url-display.svelte';
 
 	export let url: string;
 
@@ -32,11 +33,17 @@
 				This is the QR code for the shortened URL. You can scan it with your phone to visit the URL.
 			</Dialog.Description>
 		</Dialog.Header>
-		<div class="my-2 flex w-full justify-center">
+		<div class="my-1 flex w-full justify-center">
 			<img src={qrCodeData} alt="QR code" class="aspect-square w-80" />
 		</div>
+		<div class="flex justify-center">
+			<UrlDisplay {url} />
+		</div>
 		<Dialog.Footer>
-			<Button href={qrCodeData} download>Download</Button>
+			<Button href={qrCodeData} download>
+				<span class="mr-2">Download</span>
+				<Download size={16} />
+			</Button>
 		</Dialog.Footer>
 	</Dialog.Content>
 </Dialog.Root>
