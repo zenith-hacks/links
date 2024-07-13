@@ -8,7 +8,9 @@ declare global {
 		// interface PageState {}
 
 		interface Platform {
-			env: Env;
+			env: {
+				KV: KVNamespace;
+			};
 			cf: CfProperties;
 			ctx: ExecutionContext;
 		}
