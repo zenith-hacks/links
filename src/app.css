@@ -75,8 +75,4 @@
 	body {
 		@apply bg-background font-sans text-foreground antialiased;
 	}
-
-	::selection {
-		@apply bg-accent;
-	}
 }
