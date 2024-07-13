@@ -69,7 +69,7 @@
 	{#if $message}
 		<div class="flex justify-center space-x-2">
 			<div
-				class="flex h-9 items-center justify-center rounded-full border border-input bg-accent px-3 py-1 shadow-sm"
+				class="flex h-9 items-center justify-center rounded-full border border-input bg-accent px-4 py-1 shadow-sm"
 			>
 				<span class="text-sm text-accent-foreground">{$message.url}</span>
 			</div>
@@ -77,7 +77,13 @@
 				<QrCode size={18} />
 				<span class="sr-only">Show QR code</span>
 			</Button>
-			<Button size="icon" variant="secondary">
+			<Button
+				size="icon"
+				variant="secondary"
+				on:click={() => {
+					navigator.clipboard.writeText($message.url);
+				}}
+			>
 				<Copy size={18} />
 				<span class="sr-only">Copy</span>
 			</Button>
