@@ -4,6 +4,10 @@
 	import QrCode from './qr-code.svelte';
 
 	export let url: string;
+
+  function copy() {
+    navigator.clipboard.writeText(url);
+  }
 </script>
 
 <div class="flex justify-center space-x-2">
@@ -16,9 +20,7 @@
 	<Button
 		size="icon"
 		variant="secondary"
-		on:click={() => {
-			navigator.clipboard.writeText(url);
-		}}
+		on:click={copy}
 	>
 		<Copy size={18} />
 		<span class="sr-only">Copy</span>
