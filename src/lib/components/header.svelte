@@ -1,0 +1,26 @@
+<script lang="ts">
+	import { Link, Sun, Moon } from 'lucide-svelte';
+	import { toggleMode } from 'mode-watcher';
+	import { Button } from '$lib/components/ui/button';
+	import Github from '$lib/components/icons/github.svelte';
+</script>
+
+<header class="sticky top-0 z-50 flex h-14 w-full border-b bg-background lg:px-4">
+	<div class="container flex w-full items-center justify-between">
+		<a class="flex items-center space-x-1.5 transition-opacity hover:opacity-80" href="/">
+			<Link size={16} />
+			<span class="font-medium">s.podter.me</span>
+		</a>
+		<div class="flex items-center space-x-1">
+			<Button size="icon" variant="ghost" href="https://github.com/Podter/s.podter.me">
+				<Github width={18} height={18} />
+				<span class="sr-only">GitHub</span>
+			</Button>
+			<Button size="icon" variant="ghost" on:click={toggleMode}>
+				<Sun size={18} class="dark:hidden" />
+				<Moon size={18} class="hidden dark:block" />
+				<span class="sr-only">Toggle theme</span>
+			</Button>
+		</div>
+	</div>
+</header>

@@ -1,15 +1,14 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import ChevronRight from '$lib/components/icons/chevron-right.svelte';
-	import { Copy, QrCode } from 'lucide-svelte';
-	import { Button, buttonVariants } from '$lib/components/ui/button';
+	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import * as Select from '$lib/components/ui/select';
 	import { expirationOptions } from '$lib/constants';
 	import { FormSchema } from '$lib/schemas';
 	import { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
-	import * as Dialog from '$lib/components/ui/dialog';
+	import Result from '$lib/components/result.svelte';
 
 	export let data: PageData;
 
@@ -68,37 +67,6 @@
 	</form>
 
 	{#if $message}
-	<div class="flex justify-center space-x-2">
-		<div
-			class="flex h-9 items-center justify-center rounded-full border border-input bg-accent px-4 py-1 shadow-sm"
-		>
-			<span class="text-sm text-accent-foreground">{$message.url}</span>
-		</div>
-		<Dialog.Root>
-			<Dialog.Trigger class={buttonVariants({ size: 'icon', variant: 'secondary' })}>
-				<QrCode size={18} />
-				<span class="sr-only">Show QR code</span>
-			</Dialog.Trigger>
-			<Dialog.Content class="sm:max-w-md">
-				<Dialog.Header>
-					<Dialog.Title>QR code</Dialog.Title>
-					<Dialog.Description>
-						This is the QR code for the shortened URL. You can scan it with your phone to visit the
-						URL.
-					</Dialog.Description>
-				</Dialog.Header>
-			</Dialog.Content>
-		</Dialog.Root>
-		<Button
-			size="icon"
-			variant="secondary"
-			on:click={() => {
-				navigator.clipboard.writeText($message.url);
-			}}
-		>
-			<Copy size={18} />
-			<span class="sr-only">Copy</span>
-		</Button>
-	</div>
+		<Result url={$message.url} />
 	{/if}
 </main>
