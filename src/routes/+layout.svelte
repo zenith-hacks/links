@@ -8,7 +8,7 @@
 	import Github from '$lib/components/icons/github.svelte';
 </script>
 
-<header class="sticky top-0 z-50 flex h-14 w-full border-b lg:px-4">
+<header class="sticky top-0 z-50 flex h-14 w-full border-b bg-background lg:px-4">
 	<div class="container flex w-full items-center justify-between">
 		<a class="flex items-center space-x-1.5 transition-opacity hover:opacity-80" href="/">
 			<Link size={16} />
@@ -30,7 +30,12 @@
 
 <slot></slot>
 
-<footer class="fixed bottom-0 z-50 flex w-full border-t lg:px-4">
+<div
+	class="bg-dot-[#E5E5E5] dark:bg-dot-[#262626] pointer-events-none fixed bottom-0 left-0 right-0 top-0 -z-10 flex h-screen w-full"
+	aria-hidden="true"
+></div>
+
+<footer class="fixed bottom-0 z-50 flex w-full border-t bg-background lg:px-4">
 	<div
 		class="container flex w-full flex-col items-center justify-between space-y-1 py-[14px] sm:flex-row"
 	>
