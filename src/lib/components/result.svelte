@@ -4,11 +4,18 @@
 	import * as Tooltip from '$lib/components/ui/tooltip/index';
 	import QrCode from './qr-code.svelte';
 	import UrlDisplay from './url-display.svelte';
+	import { toast } from 'svelte-sonner';
 
 	export let url: string;
 
-	function copy() {
-		navigator.clipboard.writeText(url);
+	async function copy() {
+		try {
+			await navigator.clipboard.writeText(url);
+			toast.success('URL copied to clipboard');
+		} catch (error) {
+			console.error(error);
+			toast.error('Failed to copy URL to clipboard');
+		}
 	}
 </script>
 

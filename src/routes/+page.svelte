@@ -9,11 +9,19 @@
 	import { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 	import Result from '$lib/components/result.svelte';
+	import { toast } from 'svelte-sonner';
 
 	export let data: PageData;
 
 	const { form, message } = superForm(data.form, {
-		validators: zodClient(FormSchema)
+		validators: zodClient(FormSchema),
+		onUpdated: ({ form }) => {
+			if (form.valid) {
+				toast.success(`Successfully shortened the URL`);
+			} else {
+				toast.error('Something went wrong. Please try again later.');
+			}
+		}
 	});
 
 	$: selectedExpiration = $form.expiration
