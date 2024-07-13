@@ -11,11 +11,9 @@
 		Shorten your long URLs into a shorter one with ease. Just paste your long URL below to shorten
 		it.
 	</p>
-	<form
-		class="flex w-full flex-col items-center justify-center space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0"
-	>
+	<form class="flex w-full flex-col items-center justify-center sm:flex-row">
 		<Input class="max-w-lg" placeholder="Enter your URL" type="url" />
-		<div class="flex h-full space-x-2">
+		<div class="mt-2 flex h-full space-x-2 sm:ml-2 sm:mt-0">
 			<Select.Root>
 				<Select.Trigger class="w-32">
 					<Select.Value placeholder="Expiration" />
@@ -25,7 +23,7 @@
 					<Select.Item value="5m">5 minutes</Select.Item>
 					<Select.Item value="30m">30 minutes</Select.Item>
 					<Select.Item value="1hr">1 hour</Select.Item>
-					<Select.Item value="24hr">24 hours</Select.Item>
+					<Select.Item value="1d">1 day</Select.Item>
 					<Select.Item value="1w">1 week</Select.Item>
 					<Select.Item value="1m">1 month</Select.Item>
 				</Select.Content>
