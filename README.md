@@ -6,7 +6,7 @@ The simplest URL shortener. Built with SvelteKit and Cloudflare KV. Deployed on 
 
 https://s.podter.me/
 
-# Features
+## Features
 
 - Fast and simple
 - No registration required
