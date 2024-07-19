@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { Link, Sun, Moon } from 'lucide-svelte';
+	import Link from 'lucide-svelte/icons/link';
+	import Sun from 'lucide-svelte/icons/sun';
+	import Moon from 'lucide-svelte/icons/moon';
 	import { toggleMode } from 'mode-watcher';
 	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
