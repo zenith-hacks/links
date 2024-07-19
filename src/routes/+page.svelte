@@ -60,7 +60,7 @@
 				}}
 				required
 			>
-				<Select.Trigger class="w-32">
+				<Select.Trigger class="w-32" aria-label="Expiration">
 					<Select.Value placeholder="Expiration" />
 				</Select.Trigger>
 				<Select.Content>
