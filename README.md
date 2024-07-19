@@ -6,6 +6,13 @@ The simplest URL shortener. Built with SvelteKit and Cloudflare KV. Deployed on 
 
 https://s.podter.me/
 
+# Features
+
+- Fast and simple
+- No registration required
+- QR code generation
+- URL expiration
+
 ## Getting Started
 
 First, run the development server:
