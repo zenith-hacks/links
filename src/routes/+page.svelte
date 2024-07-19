@@ -55,6 +55,7 @@
 			<Select.Root
 				selected={selectedExpiration}
 				onSelectedChange={(v) => {
+					// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 					v && ($form.expiration = v.value);
 				}}
 				required
