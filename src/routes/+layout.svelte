@@ -21,3 +21,8 @@
 
 <Toaster />
 <ModeWatcher />
+
+<svelte:head>
+	<title>s.podter.me</title>
+	<meta name="description" content="The simplest URL shortener" />
+</svelte:head>
