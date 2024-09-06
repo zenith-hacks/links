@@ -17,8 +17,8 @@
 		validators: zodClient(FormSchema),
 		onUpdated: ({ form }) => {
 			if (form.valid) {
-				// @ts-expect-error - plausible is defined in the window
-				window.plausible('Shorten');
+				// @ts-expect-error - umami is defined in the window
+				window.umami.track('Shorten');
 				toast.success(`Successfully shortened the URL`);
 			} else {
 				toast.error('Something went wrong. Please try again later.');
