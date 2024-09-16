@@ -14,7 +14,7 @@
 			<span class="font-medium">Made by Podter</span>
 		</a>
 		<p class="flex items-center text-sm font-medium text-muted-foreground">
-			Powered by SvelteKit and Cloudflare KV
+			Powered by SvelteKit, Cloudflare KV, and Unicorn Magic
 		</p>
 	</div>
 </footer>

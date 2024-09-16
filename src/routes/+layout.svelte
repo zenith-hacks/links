@@ -24,5 +24,5 @@
 
 <svelte:head>
 	<title>s.podter.me</title>
-	<meta name="description" content="The simplest URL shortener" />
+	<meta name="description" content="Zenith Hacks URL shortener" />
 </svelte:head>

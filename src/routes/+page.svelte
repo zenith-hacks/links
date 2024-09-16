@@ -36,7 +36,7 @@
 </script>
 
 <main class="flex w-full flex-col items-center space-y-6 px-6 pt-20 md:pt-28 lg:pt-36">
-	<h1 class="text-center text-5xl font-bold">The simplest URL shortener</h1>
+	<h1 class="text-center text-5xl font-bold">Zenith Hacks URL Shortener</h1>
 	<p class="max-w-lg text-center text-muted-foreground">
 		Shorten your long URLs into a shorter one with ease. Just paste your long URL below to shorten
 		it.

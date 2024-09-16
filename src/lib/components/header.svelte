@@ -12,7 +12,7 @@
 	<div class="container flex w-full items-center justify-between">
 		<a class="flex items-center space-x-1.5 transition-opacity hover:opacity-80" href="/">
 			<Link size={16} />
-			<span class="font-medium">s.podter.me</span>
+			<span class="font-medium">Zenith Hacks Links</span>
 		</a>
 		<div class="flex items-center space-x-1">
 			<Tooltip.Root>
