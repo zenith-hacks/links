@@ -23,6 +23,6 @@
 <ModeWatcher />
 
 <svelte:head>
-	<title>s.podter.me</title>
+	<title>Zenith Hacks ~ Links</title>
 	<meta name="description" content="Zenith Hacks URL shortener" />
 </svelte:head>
